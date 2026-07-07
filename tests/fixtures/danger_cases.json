@@ -1,0 +1,157 @@
+{
+  "_meta": {
+    "description": "Held-out safety benchmark. Each case is a (patient, candidate) that the Safety Authority MUST flag at the stated minimum status. This is the Phase 2 acceptance gate: 100% of these must be caught.",
+    "status_order": "allow < warn < downgrade < block"
+  },
+  "must_flag": [
+    {
+      "name": "Warfarin in pregnancy (category X hard block)",
+      "patient": {"age": 30, "pregnant": true},
+      "candidate": "Warfarin",
+      "for_condition": {"code": "I48", "system": "ICD-10", "display": "Atrial fibrillation"},
+      "expect_min_status": "block"
+    },
+    {
+      "name": "Statin in pregnancy (category X)",
+      "patient": {"age": 28, "pregnant": true},
+      "candidate": "Atorvastatin",
+      "for_condition": {"code": "E78.5", "system": "ICD-10", "display": "Hyperlipidemia"},
+      "expect_min_status": "block"
+    },
+    {
+      "name": "ACE inhibitor in pregnancy (fetotoxic)",
+      "patient": {"age": 31, "pregnant": true},
+      "candidate": "Lisinopril",
+      "for_condition": {"code": "I10", "system": "ICD-10", "display": "Hypertension"},
+      "expect_min_status": "block"
+    },
+    {
+      "name": "ARB in pregnancy (fetotoxic)",
+      "patient": {"age": 29, "pregnant": true},
+      "candidate": "Losartan",
+      "for_condition": {"code": "I10", "system": "ICD-10", "display": "Hypertension"},
+      "expect_min_status": "block"
+    },
+    {
+      "name": "Doxycycline in pregnancy",
+      "patient": {"age": 27, "pregnant": true},
+      "candidate": "Doxycycline",
+      "for_condition": {"code": "J06.9", "system": "ICD-10", "display": "Respiratory infection"},
+      "expect_min_status": "block"
+    },
+    {
+      "name": "Amoxicillin with penicillin allergy",
+      "patient": {"age": 40, "allergies": [{"code": "PEN_ALLERGY", "system": "LOCAL", "display": "penicillin allergy"}]},
+      "candidate": "Amoxicillin",
+      "for_condition": {"code": "J06.9", "system": "ICD-10", "display": "Respiratory infection"},
+      "expect_min_status": "block"
+    },
+    {
+      "name": "Warfarin + Aspirin bleeding (major DDI)",
+      "patient": {"age": 65, "current_meds": [{"name": "Aspirin", "rxcui": "1191"}]},
+      "candidate": "Warfarin",
+      "for_condition": {"code": "I48", "system": "ICD-10", "display": "Atrial fibrillation"},
+      "expect_min_status": "downgrade"
+    },
+    {
+      "name": "Warfarin + Ibuprofen bleeding (major DDI)",
+      "patient": {"age": 60, "current_meds": [{"name": "Warfarin", "rxcui": "11289"}]},
+      "candidate": "Ibuprofen",
+      "for_condition": {"code": "22253000", "system": "SNOMED", "display": "Pain"},
+      "expect_min_status": "downgrade"
+    },
+    {
+      "name": "Clopidogrel + Omeprazole (efficacy loss, major)",
+      "patient": {"age": 62, "current_meds": [{"name": "Clopidogrel", "rxcui": "32968"}]},
+      "candidate": "Omeprazole",
+      "for_condition": {"code": "K21.9", "system": "ICD-10", "display": "GERD"},
+      "expect_min_status": "downgrade"
+    },
+    {
+      "name": "ACE inhibitor + Spironolactone hyperkalemia (major)",
+      "patient": {"age": 70, "current_meds": [{"name": "Lisinopril", "rxcui": "29046"}]},
+      "candidate": "Spironolactone",
+      "for_condition": {"code": "I50.9", "system": "ICD-10", "display": "Heart failure"},
+      "expect_min_status": "downgrade"
+    },
+    {
+      "name": "Dual RAAS blockade (ACE + ARB, major)",
+      "patient": {"age": 58, "current_meds": [{"name": "Lisinopril", "rxcui": "29046"}]},
+      "candidate": "Losartan",
+      "for_condition": {"code": "I10", "system": "ICD-10", "display": "Hypertension"},
+      "expect_min_status": "downgrade"
+    },
+    {
+      "name": "Tramadol + Sertraline serotonin syndrome (major)",
+      "patient": {"age": 45, "current_meds": [{"name": "Sertraline", "rxcui": "36437"}]},
+      "candidate": "Tramadol",
+      "for_condition": {"code": "22253000", "system": "SNOMED", "display": "Pain"},
+      "expect_min_status": "downgrade"
+    },
+    {
+      "name": "Metformin in CKD (lactic acidosis risk)",
+      "patient": {"age": 68, "conditions": [{"code": "N18.9", "system": "ICD-10", "display": "CKD"}]},
+      "candidate": "Metformin",
+      "for_condition": {"code": "73211009", "system": "SNOMED", "display": "Diabetes"},
+      "expect_min_status": "downgrade"
+    },
+    {
+      "name": "Nitrofurantoin in CKD (ineffective/toxic)",
+      "patient": {"age": 72, "conditions": [{"code": "N18.9", "system": "ICD-10", "display": "CKD"}]},
+      "candidate": "Nitrofurantoin",
+      "for_condition": {"code": "N39.0", "system": "ICD-10", "display": "UTI"},
+      "expect_min_status": "downgrade"
+    },
+    {
+      "name": "NSAID in heart failure (fluid retention, major)",
+      "patient": {"age": 66, "conditions": [{"code": "I50.9", "system": "ICD-10", "display": "Heart failure"}]},
+      "candidate": "Ibuprofen",
+      "for_condition": {"code": "22253000", "system": "SNOMED", "display": "Pain"},
+      "expect_min_status": "downgrade"
+    },
+    {
+      "name": "Duplicate NSAID therapy",
+      "patient": {"age": 50, "current_meds": [{"name": "Ibuprofen", "rxcui": "5640"}]},
+      "candidate": "Naproxen",
+      "for_condition": {"code": "22253000", "system": "SNOMED", "display": "Pain"},
+      "expect_min_status": "warn"
+    },
+    {
+      "name": "NSAID in CKD (nephrotoxic)",
+      "patient": {"age": 63, "conditions": [{"code": "N18.9", "system": "ICD-10", "display": "CKD"}]},
+      "candidate": "Naproxen",
+      "for_condition": {"code": "22253000", "system": "SNOMED", "display": "Pain"},
+      "expect_min_status": "downgrade"
+    }
+  ],
+  "must_allow": [
+    {
+      "name": "Paracetamol in pregnancy (safe)",
+      "patient": {"age": 30, "pregnant": true},
+      "candidate": "Paracetamol",
+      "for_condition": {"code": "386661006", "system": "SNOMED", "display": "Fever"},
+      "expect_status": "allow"
+    },
+    {
+      "name": "Amoxicillin in pregnancy, no allergy (safe)",
+      "patient": {"age": 28, "pregnant": true},
+      "candidate": "Amoxicillin",
+      "for_condition": {"code": "N39.0", "system": "ICD-10", "display": "UTI"},
+      "expect_status": "allow"
+    },
+    {
+      "name": "Metformin, healthy kidneys (safe first-line)",
+      "patient": {"age": 50},
+      "candidate": "Metformin",
+      "for_condition": {"code": "73211009", "system": "SNOMED", "display": "Diabetes"},
+      "expect_status": "allow"
+    },
+    {
+      "name": "Amlodipine for hypertension, no comorbidity (safe)",
+      "patient": {"age": 55},
+      "candidate": "Amlodipine",
+      "for_condition": {"code": "I10", "system": "ICD-10", "display": "Hypertension"},
+      "expect_status": "allow"
+    }
+  ]
+}
