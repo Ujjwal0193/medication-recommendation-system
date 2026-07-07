@@ -66,3 +66,7 @@ select = ["E", "F", "I", "W", "UP", "B"]
 # E501: long lines OK. UP042: keep `str, Enum` for 3.11 (StrEnum is 3.11+ only,
 # and `str, Enum` is the widely-compatible idiom we deliberately use).
 ignore = ["E501", "UP042"]
+
+[tool.ruff.lint.per-file-ignores]
+# Compact numpy accumulation loops read better on one line here.
+"mediguard/gnn/*.py" = ["E702"]
