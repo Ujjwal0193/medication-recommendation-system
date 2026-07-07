@@ -15,6 +15,7 @@ htmlcov/
 
 # Data — raw dumps are large / license-restricted, keep out of git
 data/raw/
+data/audit_log.jsonl
 *.parquet
 *.db
 
