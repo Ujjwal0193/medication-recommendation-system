@@ -1,0 +1,5 @@
+# Normalize line endings; silences CRLF warnings on Windows.
+* text=auto eol=lf
+*.png binary
+*.pt binary
+*.pth binary

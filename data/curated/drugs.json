@@ -1,0 +1,369 @@
+{
+  "_meta": {
+    "description": "MediGuard curated outpatient drug set. Hand-verified facts across diabetes, hypertension, pain/fever, and common infections. Frozen for the prototype scope (see docs/data_provenance.md).",
+    "rxcui_note": "rxcui values are RxNorm ingredient RxCUIs; verify/refresh via etl/normalize_rxnorm.py against the free RxNav API.",
+    "pregnancy_category": "Legacy US-FDA A/B/C/D/X scheme. X = absolute contraindication in pregnancy (hard block).",
+    "scope_freeze": "30-50 drugs. Extensibility to thousands is future work."
+  },
+  "drugs": [
+    {
+      "name": "Metformin", "rxcui": "6809", "salt": "Metformin hydrochloride", "atc": "A10BA02",
+      "drug_class": "Biguanide", "purpose": "First-line oral therapy for type 2 diabetes mellitus",
+      "pros": ["Weight-neutral", "Low hypoglycemia risk", "Cardiovascular benefit", "Inexpensive"],
+      "cons": ["GI upset", "Contraindicated in significant renal impairment", "Rare lactic acidosis"],
+      "side_effects": ["Diarrhea", "Nausea", "Metallic taste", "Vitamin B12 deficiency"],
+      "dose": "500-1000 mg twice daily (max 2550 mg/day)", "timing": "With meals", "route": "oral",
+      "quantity": "500 mg / 850 mg / 1000 mg tablets", "pregnancy_category": "B",
+      "renal_caution": "Avoid if eGFR < 30; reduce dose if eGFR 30-45"
+    },
+    {
+      "name": "Glimepiride", "rxcui": "25789", "salt": "Glimepiride", "atc": "A10BB12",
+      "drug_class": "Sulfonylurea", "purpose": "Type 2 diabetes; stimulates insulin secretion",
+      "pros": ["Effective glucose lowering", "Once daily", "Inexpensive"],
+      "cons": ["Hypoglycemia risk", "Weight gain", "Caution in elderly/renal impairment"],
+      "side_effects": ["Hypoglycemia", "Weight gain", "Dizziness"],
+      "dose": "1-4 mg once daily (max 8 mg/day)", "timing": "With breakfast", "route": "oral",
+      "quantity": "1 mg / 2 mg / 4 mg tablets", "pregnancy_category": "C",
+      "renal_caution": "Start low; hypoglycemia risk rises with renal impairment"
+    },
+    {
+      "name": "Glipizide", "rxcui": "4821", "salt": "Glipizide", "atc": "A10BB07",
+      "drug_class": "Sulfonylurea", "purpose": "Type 2 diabetes; stimulates insulin secretion",
+      "pros": ["Shorter-acting than glyburide", "Preferred sulfonylurea in mild renal impairment"],
+      "cons": ["Hypoglycemia", "Weight gain"],
+      "side_effects": ["Hypoglycemia", "Weight gain", "GI upset"],
+      "dose": "5 mg once daily, titrate (max 40 mg/day)", "timing": "30 min before breakfast", "route": "oral",
+      "quantity": "5 mg / 10 mg tablets", "pregnancy_category": "C", "renal_caution": "Preferred over glyburide in CKD"
+    },
+    {
+      "name": "Sitagliptin", "rxcui": "593411", "salt": "Sitagliptin phosphate", "atc": "A10BH01",
+      "drug_class": "DPP-4 inhibitor", "purpose": "Type 2 diabetes; incretin enhancer",
+      "pros": ["Low hypoglycemia risk", "Weight-neutral", "Once daily"],
+      "cons": ["Costly", "Dose adjust in renal impairment", "Rare pancreatitis"],
+      "side_effects": ["Nasopharyngitis", "Headache", "Rare pancreatitis"],
+      "dose": "100 mg once daily", "timing": "Any time, with or without food", "route": "oral",
+      "quantity": "25 mg / 50 mg / 100 mg tablets", "pregnancy_category": "B",
+      "renal_caution": "Reduce to 50 mg (eGFR 30-45) or 25 mg (eGFR < 30)"
+    },
+    {
+      "name": "Insulin glargine", "rxcui": "274783", "salt": "Insulin glargine", "atc": "A10AE04",
+      "drug_class": "Long-acting insulin", "purpose": "Basal insulin for type 1 and type 2 diabetes",
+      "pros": ["Once daily basal coverage", "Safe in pregnancy", "No renal contraindication"],
+      "cons": ["Injection", "Hypoglycemia risk", "Weight gain"],
+      "side_effects": ["Hypoglycemia", "Injection-site reaction", "Weight gain"],
+      "dose": "Individualized, once daily", "timing": "Same time each day", "route": "subcutaneous",
+      "quantity": "100 units/mL vial or pen", "pregnancy_category": "B", "renal_caution": "No absolute contraindication; monitor"
+    },
+    {
+      "name": "Amlodipine", "rxcui": "17767", "salt": "Amlodipine besylate", "atc": "C08CA01",
+      "drug_class": "Dihydropyridine calcium channel blocker", "purpose": "Hypertension and angina",
+      "pros": ["Once daily", "Effective", "Safe in CKD", "Inexpensive"],
+      "cons": ["Peripheral edema", "Not for acute BP lowering"],
+      "side_effects": ["Ankle edema", "Flushing", "Headache", "Palpitations"],
+      "dose": "5-10 mg once daily", "timing": "Any time", "route": "oral",
+      "quantity": "2.5 mg / 5 mg / 10 mg tablets", "pregnancy_category": "C", "renal_caution": "No adjustment"
+    },
+    {
+      "name": "Lisinopril", "rxcui": "29046", "salt": "Lisinopril", "atc": "C09AA03",
+      "drug_class": "ACE inhibitor", "purpose": "Hypertension, heart failure, diabetic nephroprotection",
+      "pros": ["Renoprotective in diabetes", "Mortality benefit in HF", "Once daily"],
+      "cons": ["Dry cough", "Hyperkalemia", "TERATOGENIC - contraindicated in pregnancy", "Angioedema risk"],
+      "side_effects": ["Dry cough", "Hyperkalemia", "Dizziness", "Angioedema (rare)"],
+      "dose": "10-40 mg once daily", "timing": "Any time", "route": "oral",
+      "quantity": "5 mg / 10 mg / 20 mg tablets", "pregnancy_category": "D", "renal_caution": "Monitor K+ and creatinine; caution in bilateral renal artery stenosis"
+    },
+    {
+      "name": "Enalapril", "rxcui": "3827", "salt": "Enalapril maleate", "atc": "C09AA02",
+      "drug_class": "ACE inhibitor", "purpose": "Hypertension and heart failure",
+      "pros": ["Renoprotective", "HF mortality benefit"],
+      "cons": ["Dry cough", "Hyperkalemia", "TERATOGENIC - contraindicated in pregnancy"],
+      "side_effects": ["Dry cough", "Hyperkalemia", "Hypotension"],
+      "dose": "5-20 mg once or twice daily", "timing": "Any time", "route": "oral",
+      "quantity": "2.5 mg / 5 mg / 10 mg tablets", "pregnancy_category": "D", "renal_caution": "Monitor K+/creatinine"
+    },
+    {
+      "name": "Losartan", "rxcui": "52175", "salt": "Losartan potassium", "atc": "C09CA01",
+      "drug_class": "Angiotensin receptor blocker", "purpose": "Hypertension, diabetic nephropathy",
+      "pros": ["No cough (vs ACE)", "Renoprotective", "Once daily"],
+      "cons": ["Hyperkalemia", "TERATOGENIC - contraindicated in pregnancy"],
+      "side_effects": ["Dizziness", "Hyperkalemia", "Fatigue"],
+      "dose": "50-100 mg once daily", "timing": "Any time", "route": "oral",
+      "quantity": "25 mg / 50 mg / 100 mg tablets", "pregnancy_category": "D", "renal_caution": "Monitor K+; caution in renal artery stenosis"
+    },
+    {
+      "name": "Hydrochlorothiazide", "rxcui": "5487", "salt": "Hydrochlorothiazide", "atc": "C03AA03",
+      "drug_class": "Thiazide diuretic", "purpose": "Hypertension and edema",
+      "pros": ["Inexpensive", "Effective first-line for HTN", "Once daily"],
+      "cons": ["Hypokalemia", "Hyponatremia", "Raises blood sugar and uric acid"],
+      "side_effects": ["Hypokalemia", "Hyperuricemia", "Photosensitivity", "Increased urination"],
+      "dose": "12.5-25 mg once daily", "timing": "Morning", "route": "oral",
+      "quantity": "12.5 mg / 25 mg tablets", "pregnancy_category": "B", "renal_caution": "Ineffective if eGFR < 30"
+    },
+    {
+      "name": "Metoprolol", "rxcui": "6918", "salt": "Metoprolol tartrate", "atc": "C07AB02",
+      "drug_class": "Beta-1 selective blocker", "purpose": "Hypertension, angina, heart failure, arrhythmia",
+      "pros": ["Cardioselective", "HF mortality benefit (succinate)", "Rate control"],
+      "cons": ["Bronchospasm at high dose", "Masks hypoglycemia", "Bradycardia", "Avoid abrupt withdrawal"],
+      "side_effects": ["Fatigue", "Bradycardia", "Cold extremities", "Dizziness"],
+      "dose": "25-100 mg twice daily (tartrate)", "timing": "With food", "route": "oral",
+      "quantity": "25 mg / 50 mg / 100 mg tablets", "pregnancy_category": "C", "renal_caution": "No adjustment"
+    },
+    {
+      "name": "Atenolol", "rxcui": "1202", "salt": "Atenolol", "atc": "C07AB03",
+      "drug_class": "Beta-1 selective blocker", "purpose": "Hypertension and angina",
+      "pros": ["Once daily", "Cardioselective", "Inexpensive"],
+      "cons": ["Renally cleared - accumulates in CKD", "Masks hypoglycemia", "Bradycardia"],
+      "side_effects": ["Fatigue", "Bradycardia", "Cold extremities"],
+      "dose": "25-100 mg once daily", "timing": "Any time", "route": "oral",
+      "quantity": "25 mg / 50 mg / 100 mg tablets", "pregnancy_category": "D", "renal_caution": "Reduce dose in renal impairment"
+    },
+    {
+      "name": "Paracetamol", "rxcui": "161", "salt": "Acetaminophen", "atc": "N02BE01",
+      "drug_class": "Analgesic/antipyretic", "purpose": "Mild-moderate pain and fever",
+      "pros": ["Safe in pregnancy", "Gastric-friendly (no GI bleed)", "First-line antipyretic"],
+      "cons": ["Hepatotoxic in overdose", "Caution in liver disease/alcohol use"],
+      "side_effects": ["Hepatotoxicity (overdose)", "Rash (rare)"],
+      "dose": "500-1000 mg every 4-6 h (max 3-4 g/day)", "timing": "As needed", "route": "oral",
+      "quantity": "500 mg / 650 mg tablets", "pregnancy_category": "B", "renal_caution": "Preferred analgesic in CKD"
+    },
+    {
+      "name": "Ibuprofen", "rxcui": "5640", "salt": "Ibuprofen", "atc": "M01AE01",
+      "drug_class": "NSAID", "purpose": "Pain, fever, inflammation",
+      "pros": ["Effective anti-inflammatory", "OTC availability"],
+      "cons": ["GI bleeding", "Renal impairment", "Raises BP", "AVOID 3rd-trimester pregnancy", "Caution with anticoagulants"],
+      "side_effects": ["Dyspepsia", "GI bleeding", "Fluid retention", "Raised BP"],
+      "dose": "200-400 mg every 4-6 h (max 3200 mg/day)", "timing": "With food", "route": "oral",
+      "quantity": "200 mg / 400 mg tablets", "pregnancy_category": "C_D_third_trimester", "renal_caution": "Avoid in CKD; nephrotoxic"
+    },
+    {
+      "name": "Naproxen", "rxcui": "7258", "salt": "Naproxen", "atc": "M01AE02",
+      "drug_class": "NSAID", "purpose": "Pain, inflammation, arthritis",
+      "pros": ["Longer-acting", "Lower CV risk among NSAIDs"],
+      "cons": ["GI bleeding", "Renal impairment", "AVOID 3rd-trimester pregnancy"],
+      "side_effects": ["Dyspepsia", "GI bleeding", "Fluid retention"],
+      "dose": "250-500 mg twice daily (max 1000 mg/day)", "timing": "With food", "route": "oral",
+      "quantity": "250 mg / 500 mg tablets", "pregnancy_category": "C_D_third_trimester", "renal_caution": "Avoid in CKD"
+    },
+    {
+      "name": "Aspirin", "rxcui": "1191", "salt": "Acetylsalicylic acid", "atc": "B01AC06",
+      "drug_class": "NSAID / antiplatelet", "purpose": "Antiplatelet (low dose); analgesic/antipyretic (high dose)",
+      "pros": ["Cardioprotective at low dose", "Inexpensive"],
+      "cons": ["GI bleeding", "Reye syndrome in children", "Bleeding risk with anticoagulants"],
+      "side_effects": ["GI bleeding", "Tinnitus (high dose)", "Bruising"],
+      "dose": "75-100 mg once daily (antiplatelet)", "timing": "With food", "route": "oral",
+      "quantity": "75 mg / 100 mg / 325 mg tablets", "pregnancy_category": "C_D_third_trimester",
+      "renal_caution": "Caution in CKD", "avoid_in_children": true
+    },
+    {
+      "name": "Diclofenac", "rxcui": "3355", "salt": "Diclofenac sodium", "atc": "M01AB05",
+      "drug_class": "NSAID", "purpose": "Pain, inflammation, arthritis",
+      "pros": ["Potent anti-inflammatory", "Topical option available"],
+      "cons": ["Highest CV risk among common NSAIDs", "GI bleeding", "AVOID 3rd-trimester pregnancy"],
+      "side_effects": ["Dyspepsia", "GI bleeding", "Raised BP", "Hepatic enzyme elevation"],
+      "dose": "50 mg two-three times daily (max 150 mg/day)", "timing": "With food", "route": "oral",
+      "quantity": "50 mg tablets", "pregnancy_category": "C_D_third_trimester", "renal_caution": "Avoid in CKD"
+    },
+    {
+      "name": "Tramadol", "rxcui": "10689", "salt": "Tramadol hydrochloride", "atc": "N02AX02",
+      "drug_class": "Opioid analgesic (weak)", "purpose": "Moderate pain",
+      "pros": ["Less respiratory depression than strong opioids"],
+      "cons": ["Seizure risk", "Serotonergic - risk with SSRIs (serotonin syndrome)", "Dependence"],
+      "side_effects": ["Nausea", "Dizziness", "Constipation", "Drowsiness"],
+      "dose": "50-100 mg every 4-6 h (max 400 mg/day)", "timing": "As needed", "route": "oral",
+      "quantity": "50 mg tablets", "pregnancy_category": "C", "renal_caution": "Reduce dose/frequency in renal impairment"
+    },
+    {
+      "name": "Amoxicillin", "rxcui": "723", "salt": "Amoxicillin", "atc": "J01CA04",
+      "drug_class": "Aminopenicillin antibiotic", "purpose": "Common bacterial infections (respiratory, ENT, UTI)",
+      "pros": ["Broad first-line coverage", "Safe in pregnancy", "Inexpensive"],
+      "cons": ["Penicillin allergy contraindication", "Diarrhea", "Rash"],
+      "side_effects": ["Diarrhea", "Rash", "Nausea"],
+      "dose": "500 mg three times daily", "timing": "With or without food", "route": "oral",
+      "quantity": "250 mg / 500 mg capsules", "pregnancy_category": "B", "renal_caution": "Reduce frequency if eGFR < 30",
+      "allergy_class": "penicillin"
+    },
+    {
+      "name": "Amoxicillin-clavulanate", "rxcui": "19711", "salt": "Amoxicillin + Clavulanic acid", "atc": "J01CR02",
+      "drug_class": "Aminopenicillin + beta-lactamase inhibitor", "purpose": "Resistant/complicated bacterial infections",
+      "pros": ["Extended coverage", "Safe in pregnancy"],
+      "cons": ["Penicillin allergy contraindication", "More GI upset (clavulanate)"],
+      "side_effects": ["Diarrhea", "Nausea", "Rash"],
+      "dose": "500/125 mg three times daily or 875/125 mg twice daily", "timing": "With food", "route": "oral",
+      "quantity": "500/125 mg / 875/125 mg tablets", "pregnancy_category": "B", "renal_caution": "Adjust if eGFR < 30",
+      "allergy_class": "penicillin"
+    },
+    {
+      "name": "Azithromycin", "rxcui": "18631", "salt": "Azithromycin", "atc": "J01FA10",
+      "drug_class": "Macrolide antibiotic", "purpose": "Respiratory and atypical infections; penicillin-allergy alternative",
+      "pros": ["Short 3-5 day course", "Once daily", "Penicillin-allergy option"],
+      "cons": ["QT prolongation", "Interacts with other QT-prolonging drugs"],
+      "side_effects": ["Diarrhea", "Nausea", "QT prolongation"],
+      "dose": "500 mg day 1 then 250 mg daily x4 days", "timing": "1 h before or 2 h after food", "route": "oral",
+      "quantity": "250 mg / 500 mg tablets", "pregnancy_category": "B", "renal_caution": "No major adjustment"
+    },
+    {
+      "name": "Ciprofloxacin", "rxcui": "2551", "salt": "Ciprofloxacin", "atc": "J01MA02",
+      "drug_class": "Fluoroquinolone antibiotic", "purpose": "UTI, GI, and resistant infections",
+      "pros": ["Broad gram-negative coverage", "Good tissue penetration"],
+      "cons": ["Tendon rupture", "QT prolongation", "Avoid in pregnancy/children", "Many drug interactions (chelation, CYP1A2)"],
+      "side_effects": ["Nausea", "Tendinopathy", "QT prolongation", "CNS effects"],
+      "dose": "500 mg twice daily", "timing": "Avoid with dairy/antacids", "route": "oral",
+      "quantity": "250 mg / 500 mg tablets", "pregnancy_category": "C", "renal_caution": "Reduce dose if eGFR < 30"
+    },
+    {
+      "name": "Doxycycline", "rxcui": "3640", "salt": "Doxycycline", "atc": "J01AA02",
+      "drug_class": "Tetracycline antibiotic", "purpose": "Respiratory, skin, atypical, and tick-borne infections",
+      "pros": ["Broad coverage", "Twice daily", "Penicillin-allergy alternative"],
+      "cons": ["CONTRAINDICATED in pregnancy and children < 8 (tooth staining)", "Photosensitivity", "Esophagitis"],
+      "side_effects": ["Photosensitivity", "GI upset", "Esophagitis"],
+      "dose": "100 mg twice daily", "timing": "Upright with water, avoid dairy/antacids", "route": "oral",
+      "quantity": "100 mg capsules", "pregnancy_category": "D", "renal_caution": "No adjustment",
+      "avoid_in_children": true
+    },
+    {
+      "name": "Nitrofurantoin", "rxcui": "7454", "salt": "Nitrofurantoin", "atc": "J01XE01",
+      "drug_class": "Urinary antibacterial", "purpose": "Uncomplicated lower UTI",
+      "pros": ["UTI-specific", "Low resistance", "Safe in early/mid pregnancy"],
+      "cons": ["Ineffective if eGFR < 30", "Avoid at term (neonatal hemolysis)", "Pulmonary toxicity (chronic)"],
+      "side_effects": ["Nausea", "Urine discoloration", "Pulmonary reactions (rare)"],
+      "dose": "100 mg twice daily x5 days", "timing": "With food", "route": "oral",
+      "quantity": "100 mg capsules", "pregnancy_category": "B", "renal_caution": "Contraindicated if eGFR < 30"
+    },
+    {
+      "name": "Warfarin", "rxcui": "11289", "salt": "Warfarin sodium", "atc": "B01AA03",
+      "drug_class": "Vitamin K antagonist anticoagulant", "purpose": "Anticoagulation (AF, VTE, mechanical valves)",
+      "pros": ["Reversible (vitamin K)", "Inexpensive", "Long clinical track record"],
+      "cons": ["Narrow therapeutic index", "TERATOGENIC - contraindicated in pregnancy", "Many food/drug interactions", "Requires INR monitoring"],
+      "side_effects": ["Bleeding", "Bruising", "Skin necrosis (rare)"],
+      "dose": "Individualized to INR target (2-3 typical)", "timing": "Same time daily", "route": "oral",
+      "quantity": "1 mg / 2 mg / 5 mg tablets", "pregnancy_category": "X", "renal_caution": "Monitor closely"
+    },
+    {
+      "name": "Clopidogrel", "rxcui": "32968", "salt": "Clopidogrel bisulfate", "atc": "B01AC04",
+      "drug_class": "Antiplatelet (P2Y12 inhibitor)", "purpose": "Prevention of atherothrombotic events",
+      "pros": ["Once daily", "Alternative to aspirin"],
+      "cons": ["Bleeding risk", "Reduced effect with omeprazole (CYP2C19)", "Additive bleeding with anticoagulants/NSAIDs"],
+      "side_effects": ["Bleeding", "Bruising", "GI upset"],
+      "dose": "75 mg once daily", "timing": "Any time", "route": "oral",
+      "quantity": "75 mg tablets", "pregnancy_category": "B", "renal_caution": "No adjustment"
+    },
+    {
+      "name": "Omeprazole", "rxcui": "7646", "salt": "Omeprazole", "atc": "A02BC01",
+      "drug_class": "Proton pump inhibitor", "purpose": "GERD, peptic ulcer, gastric protection",
+      "pros": ["Effective acid suppression", "Gastroprotective with NSAIDs"],
+      "cons": ["Reduces clopidogrel activation (CYP2C19)", "Long-term: B12/Mg deficiency, fracture risk"],
+      "side_effects": ["Headache", "Diarrhea", "Abdominal pain"],
+      "dose": "20-40 mg once daily", "timing": "30-60 min before breakfast", "route": "oral",
+      "quantity": "20 mg / 40 mg capsules", "pregnancy_category": "C", "renal_caution": "No adjustment"
+    },
+    {
+      "name": "Pantoprazole", "rxcui": "40790", "salt": "Pantoprazole sodium", "atc": "A02BC02",
+      "drug_class": "Proton pump inhibitor", "purpose": "GERD, peptic ulcer, gastric protection",
+      "pros": ["Fewer CYP interactions than omeprazole", "Preferred PPI with clopidogrel"],
+      "cons": ["Long-term B12/Mg deficiency"],
+      "side_effects": ["Headache", "Diarrhea", "Nausea"],
+      "dose": "40 mg once daily", "timing": "Before breakfast", "route": "oral",
+      "quantity": "20 mg / 40 mg tablets", "pregnancy_category": "B", "renal_caution": "No adjustment"
+    },
+    {
+      "name": "Sertraline", "rxcui": "36437", "salt": "Sertraline hydrochloride", "atc": "N06AB06",
+      "drug_class": "SSRI antidepressant", "purpose": "Depression, anxiety disorders",
+      "pros": ["First-line SSRI", "Well tolerated", "Once daily"],
+      "cons": ["Serotonin syndrome risk (with tramadol/other serotonergics)", "GI bleeding risk with NSAIDs", "Withdrawal on abrupt stop"],
+      "side_effects": ["Nausea", "Insomnia", "Sexual dysfunction", "Diarrhea"],
+      "dose": "50-200 mg once daily", "timing": "Morning or evening, consistent", "route": "oral",
+      "quantity": "25 mg / 50 mg / 100 mg tablets", "pregnancy_category": "C", "renal_caution": "No adjustment"
+    },
+    {
+      "name": "Amitriptyline", "rxcui": "704", "salt": "Amitriptyline hydrochloride", "atc": "N06AA09",
+      "drug_class": "Tricyclic antidepressant", "purpose": "Depression, neuropathic pain, migraine prophylaxis",
+      "pros": ["Effective for neuropathic pain", "Inexpensive"],
+      "cons": ["Anticholinergic", "Cardiotoxic in overdose", "Caution in elderly and cardiac disease", "Serotonergic interactions"],
+      "side_effects": ["Dry mouth", "Sedation", "Constipation", "Orthostatic hypotension"],
+      "dose": "10-75 mg at night", "timing": "Bedtime", "route": "oral",
+      "quantity": "10 mg / 25 mg tablets", "pregnancy_category": "C", "renal_caution": "Caution",
+      "avoid_in_elderly": true
+    },
+    {
+      "name": "Prednisolone", "rxcui": "8638", "salt": "Prednisolone", "atc": "H02AB06",
+      "drug_class": "Corticosteroid", "purpose": "Inflammatory and allergic conditions, asthma exacerbation",
+      "pros": ["Potent anti-inflammatory", "Rapid effect"],
+      "cons": ["Raises blood sugar (caution in diabetes)", "Raises BP", "GI ulcer risk with NSAIDs", "Immunosuppression", "Taper needed"],
+      "side_effects": ["Hyperglycemia", "Weight gain", "Mood changes", "Osteoporosis (chronic)"],
+      "dose": "5-60 mg daily, condition-dependent", "timing": "Morning with food", "route": "oral",
+      "quantity": "5 mg / 10 mg / 20 mg tablets", "pregnancy_category": "C", "renal_caution": "No adjustment"
+    },
+    {
+      "name": "Salbutamol", "rxcui": "435", "salt": "Albuterol", "atc": "R03AC02",
+      "drug_class": "Short-acting beta-2 agonist", "purpose": "Bronchospasm relief in asthma/COPD",
+      "pros": ["Rapid bronchodilation", "Rescue inhaler"],
+      "cons": ["Tremor", "Tachycardia", "Effect blunted by non-selective beta-blockers"],
+      "side_effects": ["Tremor", "Palpitations", "Headache", "Hypokalemia (high dose)"],
+      "dose": "100-200 mcg (1-2 puffs) as needed", "timing": "As needed for symptoms", "route": "inhaled",
+      "quantity": "100 mcg/actuation inhaler", "pregnancy_category": "C", "renal_caution": "No adjustment"
+    },
+    {
+      "name": "Levothyroxine", "rxcui": "10582", "salt": "Levothyroxine sodium", "atc": "H03AA01",
+      "drug_class": "Thyroid hormone", "purpose": "Hypothyroidism replacement",
+      "pros": ["Physiologic replacement", "Safe in pregnancy (dose often increased)", "Once daily"],
+      "cons": ["Absorption reduced by calcium/iron/PPIs", "Over-replacement causes AF/osteoporosis"],
+      "side_effects": ["Palpitations (over-dose)", "Weight loss", "Insomnia (over-dose)"],
+      "dose": "25-150 mcg once daily", "timing": "Empty stomach, 30-60 min before breakfast", "route": "oral",
+      "quantity": "25 / 50 / 75 / 100 mcg tablets", "pregnancy_category": "A", "renal_caution": "No adjustment"
+    },
+    {
+      "name": "Cetirizine", "rxcui": "20610", "salt": "Cetirizine hydrochloride", "atc": "R06AE07",
+      "drug_class": "Second-generation antihistamine", "purpose": "Allergic rhinitis, urticaria",
+      "pros": ["Non-sedating (mostly)", "Once daily", "OTC"],
+      "cons": ["Mild drowsiness in some", "Additive sedation with CNS depressants"],
+      "side_effects": ["Mild drowsiness", "Dry mouth", "Headache"],
+      "dose": "10 mg once daily", "timing": "Any time", "route": "oral",
+      "quantity": "10 mg tablets", "pregnancy_category": "B", "renal_caution": "Reduce to 5 mg if eGFR < 30"
+    },
+    {
+      "name": "Simvastatin", "rxcui": "36567", "salt": "Simvastatin", "atc": "C10AA01",
+      "drug_class": "HMG-CoA reductase inhibitor (statin)", "purpose": "Hyperlipidemia, cardiovascular prevention",
+      "pros": ["Cardiovascular risk reduction", "Inexpensive"],
+      "cons": ["CONTRAINDICATED in pregnancy", "Myopathy risk (worse with certain CYP3A4 inhibitors)", "Avoid high-dose with amlodipine"],
+      "side_effects": ["Myalgia", "Raised liver enzymes", "Rare rhabdomyolysis"],
+      "dose": "10-40 mg once daily", "timing": "Evening", "route": "oral",
+      "quantity": "10 mg / 20 mg / 40 mg tablets", "pregnancy_category": "X", "renal_caution": "Caution at high dose"
+    },
+    {
+      "name": "Atorvastatin", "rxcui": "83367", "salt": "Atorvastatin calcium", "atc": "C10AA05",
+      "drug_class": "HMG-CoA reductase inhibitor (statin)", "purpose": "Hyperlipidemia, cardiovascular prevention",
+      "pros": ["Potent LDL lowering", "Any-time dosing", "Well studied"],
+      "cons": ["CONTRAINDICATED in pregnancy", "Myopathy risk", "CYP3A4 interactions"],
+      "side_effects": ["Myalgia", "Raised liver enzymes", "GI upset"],
+      "dose": "10-80 mg once daily", "timing": "Any time", "route": "oral",
+      "quantity": "10 / 20 / 40 / 80 mg tablets", "pregnancy_category": "X", "renal_caution": "No adjustment"
+    },
+    {
+      "name": "Furosemide", "rxcui": "4603", "salt": "Furosemide", "atc": "C03CA01",
+      "drug_class": "Loop diuretic", "purpose": "Edema in heart failure, renal, or hepatic disease; resistant hypertension",
+      "pros": ["Potent diuresis", "Works in renal impairment (unlike thiazides)"],
+      "cons": ["Hypokalemia", "Dehydration", "Ototoxicity (high dose)", "Raises uric acid"],
+      "side_effects": ["Hypokalemia", "Dehydration", "Hyponatremia", "Increased urination"],
+      "dose": "20-80 mg once or twice daily", "timing": "Morning (and early afternoon if BID)", "route": "oral",
+      "quantity": "20 mg / 40 mg tablets", "pregnancy_category": "C", "renal_caution": "Used in renal impairment; monitor electrolytes"
+    },
+    {
+      "name": "Spironolactone", "rxcui": "9997", "salt": "Spironolactone", "atc": "C03DA01",
+      "drug_class": "Potassium-sparing diuretic / aldosterone antagonist", "purpose": "Heart failure, resistant hypertension, edema",
+      "pros": ["Mortality benefit in HF", "Potassium-sparing"],
+      "cons": ["HYPERKALEMIA (especially with ACE/ARB)", "Gynecomastia", "Avoid in significant renal impairment"],
+      "side_effects": ["Hyperkalemia", "Gynecomastia", "Menstrual irregularity"],
+      "dose": "25-50 mg once daily", "timing": "Morning", "route": "oral",
+      "quantity": "25 mg / 50 mg tablets", "pregnancy_category": "C", "renal_caution": "Avoid if eGFR < 30 or K+ elevated"
+    },
+    {
+      "name": "Gliclazide", "rxcui": "310488", "salt": "Gliclazide", "atc": "A10BB09",
+      "drug_class": "Sulfonylurea", "purpose": "Type 2 diabetes; stimulates insulin secretion",
+      "pros": ["Lower hypoglycemia risk than glibenclamide", "Once/twice daily"],
+      "cons": ["Hypoglycemia", "Weight gain"],
+      "side_effects": ["Hypoglycemia", "Weight gain", "GI upset"],
+      "dose": "40-320 mg daily (divided if > 160 mg)", "timing": "With meals", "route": "oral",
+      "quantity": "40 mg / 80 mg tablets", "pregnancy_category": "C", "renal_caution": "Caution in renal impairment"
+    }
+  ]
+}

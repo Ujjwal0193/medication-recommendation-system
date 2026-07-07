@@ -1,0 +1,54 @@
+{
+  "_meta": {
+    "description": "Drug-drug interactions (INTERACTS_WITH edges). Undirected. severity: contraindicated|major|moderate|minor. management describes clinical action. Curated from standard pharmacology references for the prototype drug set; validate against DDInter/openFDA before any real use.",
+    "severity_scale": "contraindicated > major > moderate > minor"
+  },
+  "interactions": [
+    {"a": "Warfarin", "b": "Aspirin", "severity": "major", "mechanism": "Additive bleeding (anticoagulant + antiplatelet)", "management": "Avoid combination unless specifically indicated; monitor for bleeding, check INR"},
+    {"a": "Warfarin", "b": "Ibuprofen", "severity": "major", "mechanism": "NSAID adds antiplatelet effect + GI bleed risk on top of anticoagulation", "management": "Avoid NSAIDs; use paracetamol for analgesia"},
+    {"a": "Warfarin", "b": "Naproxen", "severity": "major", "mechanism": "NSAID + anticoagulant bleeding risk", "management": "Avoid; prefer paracetamol"},
+    {"a": "Warfarin", "b": "Diclofenac", "severity": "major", "mechanism": "NSAID + anticoagulant bleeding risk", "management": "Avoid; prefer paracetamol"},
+    {"a": "Warfarin", "b": "Azithromycin", "severity": "moderate", "mechanism": "Macrolide potentiates warfarin, raises INR", "management": "Monitor INR closely"},
+    {"a": "Warfarin", "b": "Ciprofloxacin", "severity": "moderate", "mechanism": "Fluoroquinolone raises INR", "management": "Monitor INR"},
+
+    {"a": "Clopidogrel", "b": "Omeprazole", "severity": "major", "mechanism": "Omeprazole inhibits CYP2C19, reducing clopidogrel activation and antiplatelet effect", "management": "Use pantoprazole instead of omeprazole"},
+    {"a": "Clopidogrel", "b": "Aspirin", "severity": "moderate", "mechanism": "Additive bleeding (dual antiplatelet)", "management": "Intentional in some cardiac indications; monitor bleeding"},
+    {"a": "Clopidogrel", "b": "Ibuprofen", "severity": "moderate", "mechanism": "Additive bleeding risk", "management": "Prefer paracetamol; gastroprotection if needed"},
+    {"a": "Clopidogrel", "b": "Warfarin", "severity": "major", "mechanism": "Additive bleeding", "management": "Avoid unless specialist-directed"},
+
+    {"a": "Lisinopril", "b": "Spironolactone", "severity": "major", "mechanism": "Additive hyperkalemia (ACE inhibitor + potassium-sparing diuretic)", "management": "Monitor serum potassium; avoid in renal impairment"},
+    {"a": "Enalapril", "b": "Spironolactone", "severity": "major", "mechanism": "Additive hyperkalemia", "management": "Monitor potassium"},
+    {"a": "Losartan", "b": "Spironolactone", "severity": "major", "mechanism": "Additive hyperkalemia (ARB + potassium-sparing diuretic)", "management": "Monitor potassium"},
+    {"a": "Lisinopril", "b": "Losartan", "severity": "major", "mechanism": "Dual RAAS blockade increases hyperkalemia and renal injury without benefit", "management": "Do not combine ACE inhibitor with ARB"},
+    {"a": "Enalapril", "b": "Losartan", "severity": "major", "mechanism": "Dual RAAS blockade", "management": "Do not combine"},
+    {"a": "Lisinopril", "b": "Ibuprofen", "severity": "moderate", "mechanism": "NSAID reduces ACE-inhibitor efficacy and adds renal/hyperkalemia risk ('triple whammy' with diuretic)", "management": "Avoid chronic NSAID; monitor renal function/BP"},
+    {"a": "Losartan", "b": "Ibuprofen", "severity": "moderate", "mechanism": "NSAID reduces ARB efficacy and adds renal risk", "management": "Avoid chronic NSAID"},
+    {"a": "Lisinopril", "b": "Potassium", "severity": "moderate", "mechanism": "Hyperkalemia", "management": "Monitor potassium"},
+
+    {"a": "Tramadol", "b": "Sertraline", "severity": "major", "mechanism": "Additive serotonergic effect -> serotonin syndrome; tramadol also lowers seizure threshold", "management": "Avoid or use with caution and monitoring"},
+    {"a": "Tramadol", "b": "Amitriptyline", "severity": "major", "mechanism": "Serotonin syndrome + seizure risk", "management": "Avoid combination"},
+    {"a": "Sertraline", "b": "Amitriptyline", "severity": "moderate", "mechanism": "Additive serotonergic effect; raised TCA levels", "management": "Monitor for serotonin syndrome"},
+    {"a": "Sertraline", "b": "Ibuprofen", "severity": "moderate", "mechanism": "SSRI + NSAID increase GI bleeding risk", "management": "Gastroprotection or prefer paracetamol"},
+    {"a": "Sertraline", "b": "Aspirin", "severity": "moderate", "mechanism": "SSRI + antiplatelet bleeding risk", "management": "Monitor for bleeding"},
+
+    {"a": "Azithromycin", "b": "Amitriptyline", "severity": "moderate", "mechanism": "Additive QT prolongation", "management": "Monitor ECG/QT in at-risk patients"},
+    {"a": "Ciprofloxacin", "b": "Amitriptyline", "severity": "moderate", "mechanism": "Additive QT prolongation", "management": "Caution; monitor QT"},
+    {"a": "Azithromycin", "b": "Ciprofloxacin", "severity": "moderate", "mechanism": "Additive QT prolongation", "management": "Avoid concurrent QT-prolonging agents"},
+
+    {"a": "Metoprolol", "b": "Salbutamol", "severity": "moderate", "mechanism": "Beta-blocker antagonizes beta-agonist bronchodilation", "management": "Prefer cardioselective beta-blocker; caution in asthma"},
+    {"a": "Atenolol", "b": "Salbutamol", "severity": "moderate", "mechanism": "Beta-blocker antagonizes bronchodilation", "management": "Caution in reactive airways"},
+    {"a": "Metoprolol", "b": "Amlodipine", "severity": "minor", "mechanism": "Additive hypotension/bradycardia (usually intentional combination)", "management": "Monitor BP/HR"},
+
+    {"a": "Simvastatin", "b": "Amlodipine", "severity": "moderate", "mechanism": "Amlodipine raises simvastatin levels (CYP3A4) -> myopathy risk", "management": "Limit simvastatin to 20 mg/day with amlodipine, or use atorvastatin"},
+    {"a": "Simvastatin", "b": "Azithromycin", "severity": "moderate", "mechanism": "Macrolide raises statin levels -> myopathy", "management": "Consider holding statin during course"},
+    {"a": "Atorvastatin", "b": "Azithromycin", "severity": "minor", "mechanism": "Mild statin level increase", "management": "Monitor for myalgia"},
+
+    {"a": "Metformin", "b": "Furosemide", "severity": "minor", "mechanism": "Loop diuretic can worsen renal function, raising metformin/lactic-acidosis risk in dehydration", "management": "Monitor renal function/hydration"},
+    {"a": "Hydrochlorothiazide", "b": "Furosemide", "severity": "moderate", "mechanism": "Additive electrolyte loss (hypokalemia, volume depletion)", "management": "Monitor electrolytes; sequential nephron blockade only under supervision"},
+    {"a": "Prednisolone", "b": "Ibuprofen", "severity": "moderate", "mechanism": "Corticosteroid + NSAID markedly increase GI ulcer/bleed risk", "management": "Gastroprotection (PPI) or avoid"},
+    {"a": "Prednisolone", "b": "Aspirin", "severity": "moderate", "mechanism": "Additive GI ulcer risk", "management": "Gastroprotection"},
+    {"a": "Levothyroxine", "b": "Omeprazole", "severity": "minor", "mechanism": "Reduced levothyroxine absorption", "management": "Separate dosing; monitor TSH"},
+    {"a": "Levothyroxine", "b": "Pantoprazole", "severity": "minor", "mechanism": "Reduced levothyroxine absorption", "management": "Separate dosing; monitor TSH"},
+    {"a": "Ciprofloxacin", "b": "Levothyroxine", "severity": "minor", "mechanism": "Reduced absorption if co-administered", "management": "Separate by several hours"}
+  ]
+}

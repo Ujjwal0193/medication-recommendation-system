@@ -1,0 +1,28 @@
+{
+  "_meta": {
+    "description": "Therapeutic-class membership for duplicate-therapy detection (DUPLICATE_CLASS_OF). Two drugs sharing a duplicate_class should not usually be co-prescribed.",
+    "note": "This is a simplified class map for the prototype scope. NSAIDs, ACE inhibitors, ARBs, sulfonylureas, statins, PPIs, beta-blockers are the classes where duplication is clinically discouraged."
+  },
+  "classes": {
+    "NSAID": ["Ibuprofen", "Naproxen", "Diclofenac", "Aspirin"],
+    "ACE_inhibitor": ["Lisinopril", "Enalapril"],
+    "ARB": ["Losartan"],
+    "Sulfonylurea": ["Glimepiride", "Glipizide", "Gliclazide"],
+    "Statin": ["Simvastatin", "Atorvastatin"],
+    "PPI": ["Omeprazole", "Pantoprazole"],
+    "Beta_blocker": ["Metoprolol", "Atenolol"],
+    "Thiazide_diuretic": ["Hydrochlorothiazide"],
+    "Loop_diuretic": ["Furosemide"],
+    "Calcium_channel_blocker": ["Amlodipine"],
+    "DPP4_inhibitor": ["Sitagliptin"],
+    "Biguanide": ["Metformin"],
+    "Macrolide": ["Azithromycin"],
+    "Fluoroquinolone": ["Ciprofloxacin"],
+    "Penicillin": ["Amoxicillin", "Amoxicillin-clavulanate"],
+    "Tetracycline": ["Doxycycline"],
+    "SSRI": ["Sertraline"],
+    "TCA": ["Amitriptyline"]
+  },
+  "duplicate_discouraged": ["NSAID", "ACE_inhibitor", "Sulfonylurea", "Statin", "PPI", "Beta_blocker"],
+  "rico_note": "ACE_inhibitor + ARB duplication is handled as an interaction (dual RAAS blockade), not just duplication."
+}

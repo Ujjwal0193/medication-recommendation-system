@@ -1,0 +1,50 @@
+{
+  "_meta": {
+    "description": "Drug-condition contraindications (CONTRAINDICATES edges: Condition -> Drug). severity: contraindicated (hard block) | major (warn/downgrade) | moderate. Pregnancy X-category and specific teratogens are hard blocks. Curated from standard references for the prototype scope.",
+    "condition_ref": "condition codes match data/curated/conditions.json"
+  },
+  "contraindications": [
+    {"condition": "Z33.1", "drug": "Warfarin", "severity": "contraindicated", "reason": "Teratogenic (fetal warfarin syndrome); pregnancy category X"},
+    {"condition": "Z33.1", "drug": "Simvastatin", "severity": "contraindicated", "reason": "Statins contraindicated in pregnancy (category X); disrupt fetal cholesterol synthesis"},
+    {"condition": "Z33.1", "drug": "Atorvastatin", "severity": "contraindicated", "reason": "Statins contraindicated in pregnancy (category X)"},
+    {"condition": "Z33.1", "drug": "Lisinopril", "severity": "contraindicated", "reason": "ACE inhibitors are fetotoxic in 2nd/3rd trimester (renal dysgenesis, oligohydramnios); avoid throughout"},
+    {"condition": "Z33.1", "drug": "Enalapril", "severity": "contraindicated", "reason": "ACE inhibitor fetotoxicity; avoid in pregnancy"},
+    {"condition": "Z33.1", "drug": "Losartan", "severity": "contraindicated", "reason": "ARB fetotoxicity; avoid in pregnancy"},
+    {"condition": "Z33.1", "drug": "Doxycycline", "severity": "contraindicated", "reason": "Tetracyclines cause fetal tooth/bone staining; avoid in pregnancy"},
+    {"condition": "Z33.1", "drug": "Ciprofloxacin", "severity": "major", "reason": "Fluoroquinolone - possible cartilage effects; avoid unless no alternative"},
+    {"condition": "Z33.1", "drug": "Ibuprofen", "severity": "major", "reason": "NSAIDs avoided in 3rd trimester (premature ductus closure, oligohydramnios)"},
+    {"condition": "Z33.1", "drug": "Naproxen", "severity": "major", "reason": "NSAID - avoid in 3rd trimester"},
+    {"condition": "Z33.1", "drug": "Diclofenac", "severity": "major", "reason": "NSAID - avoid in 3rd trimester"},
+    {"condition": "Z33.1", "drug": "Aspirin", "severity": "major", "reason": "High-dose NSAID effects; avoid analgesic doses in 3rd trimester"},
+    {"condition": "Z33.1", "drug": "Amitriptyline", "severity": "moderate", "reason": "Use only if benefit outweighs risk; neonatal effects reported"},
+
+    {"condition": "N18.9", "drug": "Metformin", "severity": "major", "reason": "Risk of lactic acidosis in significant renal impairment; contraindicated if eGFR < 30"},
+    {"condition": "N18.9", "drug": "Nitrofurantoin", "severity": "major", "reason": "Ineffective and toxic if eGFR < 30"},
+    {"condition": "N18.9", "drug": "Spironolactone", "severity": "major", "reason": "Hyperkalemia risk in renal impairment"},
+    {"condition": "N18.9", "drug": "Ibuprofen", "severity": "major", "reason": "NSAIDs are nephrotoxic; worsen CKD"},
+    {"condition": "N18.9", "drug": "Naproxen", "severity": "major", "reason": "NSAID nephrotoxicity"},
+    {"condition": "N18.9", "drug": "Diclofenac", "severity": "major", "reason": "NSAID nephrotoxicity"},
+    {"condition": "N18.9", "drug": "Hydrochlorothiazide", "severity": "moderate", "reason": "Thiazides ineffective at low eGFR"},
+
+    {"condition": "J45.909", "drug": "Atenolol", "severity": "major", "reason": "Non-cardioselective beta-blockade at higher doses can trigger bronchospasm"},
+    {"condition": "J45.909", "drug": "Aspirin", "severity": "moderate", "reason": "Can precipitate bronchospasm in NSAID-sensitive asthma"},
+    {"condition": "J45.909", "drug": "Ibuprofen", "severity": "moderate", "reason": "NSAID-exacerbated respiratory disease in susceptible asthmatics"},
+
+    {"condition": "73211009", "drug": "Prednisolone", "severity": "moderate", "reason": "Corticosteroids raise blood glucose; worsen diabetic control"},
+    {"condition": "73211009", "drug": "Hydrochlorothiazide", "severity": "moderate", "reason": "Thiazides can worsen glycemic control"},
+
+    {"condition": "I95", "drug": "Amlodipine", "severity": "moderate", "reason": "Vasodilator can worsen hypotension"},
+    {"condition": "I95", "drug": "Furosemide", "severity": "moderate", "reason": "Volume depletion worsens hypotension"},
+    {"condition": "I95", "drug": "Enalapril", "severity": "moderate", "reason": "Can cause further BP drop"},
+    {"condition": "I95", "drug": "Lisinopril", "severity": "moderate", "reason": "Can cause further BP drop"},
+
+    {"condition": "I51.9", "drug": "Diclofenac", "severity": "major", "reason": "Highest cardiovascular risk NSAID; avoid in cardiac disease"},
+    {"condition": "I51.9", "drug": "Ibuprofen", "severity": "moderate", "reason": "NSAIDs raise BP and cardiovascular risk; caution in heart disease"},
+    {"condition": "I50.9", "drug": "Ibuprofen", "severity": "major", "reason": "NSAIDs cause fluid retention, worsen heart failure"},
+    {"condition": "I50.9", "drug": "Naproxen", "severity": "major", "reason": "NSAID fluid retention worsens heart failure"},
+    {"condition": "I50.9", "drug": "Diclofenac", "severity": "major", "reason": "NSAID worsens heart failure"},
+
+    {"condition": "PEN_ALLERGY", "drug": "Amoxicillin", "severity": "contraindicated", "reason": "Penicillin allergy - risk of anaphylaxis"},
+    {"condition": "PEN_ALLERGY", "drug": "Amoxicillin-clavulanate", "severity": "contraindicated", "reason": "Penicillin allergy - risk of anaphylaxis"}
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "_meta": {
+    "description": "Condition -> candidate drugs (TREATS edges). rank = clinical preference order (1 = more first-line). Used by the candidate-generation layer. line: first|second|adjunct."
+  },
+  "treats": [
+    {"condition": "73211009", "drug": "Metformin", "rank": 1, "line": "first"},
+    {"condition": "73211009", "drug": "Sitagliptin", "rank": 2, "line": "second"},
+    {"condition": "73211009", "drug": "Gliclazide", "rank": 3, "line": "second"},
+    {"condition": "73211009", "drug": "Glimepiride", "rank": 4, "line": "second"},
+    {"condition": "73211009", "drug": "Glipizide", "rank": 5, "line": "second"},
+    {"condition": "73211009", "drug": "Insulin glargine", "rank": 6, "line": "adjunct"},
+
+    {"condition": "I10", "drug": "Amlodipine", "rank": 1, "line": "first"},
+    {"condition": "I10", "drug": "Lisinopril", "rank": 2, "line": "first"},
+    {"condition": "I10", "drug": "Losartan", "rank": 3, "line": "first"},
+    {"condition": "I10", "drug": "Hydrochlorothiazide", "rank": 4, "line": "first"},
+    {"condition": "I10", "drug": "Enalapril", "rank": 5, "line": "first"},
+    {"condition": "I10", "drug": "Metoprolol", "rank": 6, "line": "second"},
+    {"condition": "I10", "drug": "Atenolol", "rank": 7, "line": "second"},
+
+    {"condition": "386661006", "drug": "Paracetamol", "rank": 1, "line": "first"},
+    {"condition": "386661006", "drug": "Ibuprofen", "rank": 2, "line": "second"},
+
+    {"condition": "22253000", "drug": "Paracetamol", "rank": 1, "line": "first"},
+    {"condition": "22253000", "drug": "Ibuprofen", "rank": 2, "line": "second"},
+    {"condition": "22253000", "drug": "Naproxen", "rank": 3, "line": "second"},
+    {"condition": "22253000", "drug": "Diclofenac", "rank": 4, "line": "second"},
+    {"condition": "22253000", "drug": "Tramadol", "rank": 5, "line": "adjunct"},
+
+    {"condition": "55300003", "drug": "Paracetamol", "rank": 1, "line": "first"},
+    {"condition": "55300003", "drug": "Ibuprofen", "rank": 2, "line": "second"},
+    {"condition": "55300003", "drug": "Naproxen", "rank": 3, "line": "second"},
+
+    {"condition": "25064002", "drug": "Paracetamol", "rank": 1, "line": "first"},
+    {"condition": "25064002", "drug": "Ibuprofen", "rank": 2, "line": "second"},
+    {"condition": "25064002", "drug": "Amitriptyline", "rank": 3, "line": "adjunct"},
+
+    {"condition": "N39.0", "drug": "Nitrofurantoin", "rank": 1, "line": "first"},
+    {"condition": "N39.0", "drug": "Amoxicillin", "rank": 2, "line": "second"},
+    {"condition": "N39.0", "drug": "Ciprofloxacin", "rank": 3, "line": "second"},
+
+    {"condition": "J06.9", "drug": "Amoxicillin", "rank": 1, "line": "first"},
+    {"condition": "J06.9", "drug": "Amoxicillin-clavulanate", "rank": 2, "line": "second"},
+    {"condition": "J06.9", "drug": "Azithromycin", "rank": 3, "line": "second"},
+    {"condition": "J06.9", "drug": "Doxycycline", "rank": 4, "line": "second"},
+
+    {"condition": "I50.9", "drug": "Lisinopril", "rank": 1, "line": "first"},
+    {"condition": "I50.9", "drug": "Metoprolol", "rank": 2, "line": "first"},
+    {"condition": "I50.9", "drug": "Spironolactone", "rank": 3, "line": "second"},
+    {"condition": "I50.9", "drug": "Furosemide", "rank": 4, "line": "adjunct"},
+
+    {"condition": "I48", "drug": "Metoprolol", "rank": 1, "line": "first"},
+    {"condition": "I48", "drug": "Warfarin", "rank": 2, "line": "first"},
+    {"condition": "I48", "drug": "Clopidogrel", "rank": 3, "line": "adjunct"},
+
+    {"condition": "J45.909", "drug": "Salbutamol", "rank": 1, "line": "first"},
+    {"condition": "J45.909", "drug": "Prednisolone", "rank": 2, "line": "adjunct"},
+
+    {"condition": "K21.9", "drug": "Omeprazole", "rank": 1, "line": "first"},
+    {"condition": "K21.9", "drug": "Pantoprazole", "rank": 2, "line": "first"},
+
+    {"condition": "E78.5", "drug": "Atorvastatin", "rank": 1, "line": "first"},
+    {"condition": "E78.5", "drug": "Simvastatin", "rank": 2, "line": "first"},
+
+    {"condition": "E03.9", "drug": "Levothyroxine", "rank": 1, "line": "first"},
+
+    {"condition": "F32.9", "drug": "Sertraline", "rank": 1, "line": "first"},
+    {"condition": "F32.9", "drug": "Amitriptyline", "rank": 2, "line": "second"},
+
+    {"condition": "J30.9", "drug": "Cetirizine", "rank": 1, "line": "first"}
+  ]
+}

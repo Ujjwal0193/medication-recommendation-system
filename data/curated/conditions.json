@@ -1,0 +1,28 @@
+{
+  "_meta": {
+    "description": "Conditions/symptoms the system reasons over, with standard codes. Codes are illustrative standard identifiers (SNOMED CT / ICD-10) for the prototype scope."
+  },
+  "conditions": [
+    {"code": "73211009", "system": "SNOMED", "display": "Diabetes mellitus", "aliases": ["diabetes", "sugar", "high sugar", "high blood sugar", "t2dm", "type 2 diabetes"]},
+    {"code": "I10", "system": "ICD-10", "display": "Essential hypertension", "aliases": ["hypertension", "high bp", "high blood pressure", "raised bp"]},
+    {"code": "I95", "system": "ICD-10", "display": "Hypotension", "aliases": ["low bp", "low blood pressure", "hypotension"]},
+    {"code": "386661006", "system": "SNOMED", "display": "Fever", "aliases": ["fever", "pyrexia", "high temperature"]},
+    {"code": "55300003", "system": "SNOMED", "display": "Muscle cramp", "aliases": ["cramps", "cramp", "muscle cramps", "spasm"]},
+    {"code": "22253000", "system": "SNOMED", "display": "Pain", "aliases": ["pain", "ache", "body ache", "bodyache"]},
+    {"code": "25064002", "system": "SNOMED", "display": "Headache", "aliases": ["headache", "head ache", "migraine"]},
+    {"code": "Z33.1", "system": "ICD-10", "display": "Pregnant state", "aliases": ["pregnant", "pregnancy", "expecting"]},
+    {"code": "I51.9", "system": "ICD-10", "display": "Heart disease, unspecified", "aliases": ["heart condition", "heart disease", "cardiac disease", "cardiac condition"]},
+    {"code": "I50.9", "system": "ICD-10", "display": "Heart failure", "aliases": ["heart failure", "chf", "congestive heart failure"]},
+    {"code": "I48", "system": "ICD-10", "display": "Atrial fibrillation", "aliases": ["atrial fibrillation", "af", "afib", "irregular heartbeat"]},
+    {"code": "N18.9", "system": "ICD-10", "display": "Chronic kidney disease", "aliases": ["kidney disease", "renal impairment", "ckd", "kidney problem", "renal failure"]},
+    {"code": "J45.909", "system": "ICD-10", "display": "Asthma", "aliases": ["asthma", "wheezing", "bronchospasm"]},
+    {"code": "K21.9", "system": "ICD-10", "display": "GERD", "aliases": ["acid reflux", "gerd", "heartburn", "acidity"]},
+    {"code": "E78.5", "system": "ICD-10", "display": "Hyperlipidemia", "aliases": ["high cholesterol", "hyperlipidemia", "dyslipidemia"]},
+    {"code": "N39.0", "system": "ICD-10", "display": "Urinary tract infection", "aliases": ["uti", "urine infection", "urinary infection", "burning urination"]},
+    {"code": "J06.9", "system": "ICD-10", "display": "Upper respiratory infection", "aliases": ["cold", "uri", "respiratory infection", "throat infection", "cough with infection"]},
+    {"code": "E03.9", "system": "ICD-10", "display": "Hypothyroidism", "aliases": ["hypothyroidism", "underactive thyroid", "low thyroid"]},
+    {"code": "F32.9", "system": "ICD-10", "display": "Depression", "aliases": ["depression", "depressed", "low mood"]},
+    {"code": "J30.9", "system": "ICD-10", "display": "Allergic rhinitis", "aliases": ["allergy", "allergic rhinitis", "hay fever", "runny nose allergy"]},
+    {"code": "PEN_ALLERGY", "system": "LOCAL", "display": "Penicillin allergy", "aliases": ["penicillin allergy", "allergic to penicillin", "allergic to amoxicillin"]}
+  ]
+}
