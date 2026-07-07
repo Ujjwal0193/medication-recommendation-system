@@ -1,0 +1,1 @@
+"""MediGuard safety layer."""

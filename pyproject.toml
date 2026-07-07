@@ -1,0 +1,68 @@
+[project]
+name = "mediguard"
+version = "0.1.0"
+description = "MediGuard — a safe, explainable neuro-symbolic clinical decision-support system for medication recommendation and drug-interaction checking."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Ujjwal Rawat" }]
+
+dependencies = [
+    "pydantic>=2.6",
+    "networkx>=3.2",
+    "requests>=2.31",
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.29",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+# Knowledge-graph Neo4j backend (only needed if you run Neo4j instead of the
+# default embedded NetworkX backend).
+neo4j = ["neo4j>=5.18"]
+
+# Clinical NLP layer (Phase 3). Heavy; install when you build the NLP layer.
+nlp = [
+    "spacy>=3.7",
+    "medspacy>=1.0",
+    "scispacy>=0.5.4",
+]
+
+# GNN DDI model (Phase 4). Heavy; install when you build the GNN layer.
+gnn = [
+    "torch>=2.2",
+    "torch-geometric>=2.5",
+    "scikit-learn>=1.4",
+    "numpy>=1.26",
+]
+
+# Uncertainty / conformal abstention (Phase 5).
+uncertainty = ["mapie>=0.8", "scikit-learn>=1.4", "numpy>=1.26"]
+
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=4.1",
+    "ruff>=0.3",
+    "httpx>=0.27",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["mediguard*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "B"]
+# E501: long lines OK. UP042: keep `str, Enum` for 3.11 (StrEnum is 3.11+ only,
+# and `str, Enum` is the widely-compatible idiom we deliberately use).
+ignore = ["E501", "UP042"]

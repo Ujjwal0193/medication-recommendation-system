@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.env
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Data — raw dumps are large / license-restricted, keep out of git
+data/raw/
+*.parquet
+*.db
+
+# Node / React
+node_modules/
+ui/dist/
+ui/build/
+
+# Models
+*.pt
+*.pth
+mediguard/gnn/checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

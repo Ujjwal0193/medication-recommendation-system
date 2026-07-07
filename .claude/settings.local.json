@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(py --version)",
+      "Bash(uv --version)",
+      "Bash(docker --version)",
+      "Bash(git --version)",
+      "Bash(python -m pip --version)",
+      "Bash(npm --version)",
+      "Bash(./.venv/Scripts/python.exe -m pytest tests/test_schemas.py -v)"
+    ]
+  }
+}
