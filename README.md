@@ -40,6 +40,20 @@ pytest                      # schema + safety acceptance tests
 
 The default knowledge-graph backend is **embedded NetworkX** — no database needed.
 
+### See it run
+
+```bash
+python scripts/demo.py "32, pregnant, cramps and fever, high sugar, on warfarin"
+python scripts/evaluate.py          # regenerates docs/evaluation.md with all metrics
+```
+
+### Full web demo (API + React UI)
+
+```bash
+uvicorn mediguard.api.app:app --port 8000     # terminal 1
+cd ui && npm install && npm run dev           # terminal 2 → http://localhost:5173
+```
+
 ### Optional Neo4j backend
 
 ```bash

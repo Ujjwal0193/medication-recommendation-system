@@ -70,3 +70,4 @@ ignore = ["E501", "UP042"]
 [tool.ruff.lint.per-file-ignores]
 # Compact numpy accumulation loops read better on one line here.
 "mediguard/gnn/*.py" = ["E702"]
+"scripts/*.py" = ["E702"]
