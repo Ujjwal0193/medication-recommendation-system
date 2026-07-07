@@ -156,6 +156,34 @@ def drugs() -> dict:
     return {"drugs": sorted(get_kg().all_drugs())}
 
 
+@app.get("/conditions")
+def conditions() -> dict:
+    """Conditions the system can reason over (for structured-input dropdowns)."""
+    import json
+    from pathlib import Path
+
+    path = Path(__file__).resolve().parents[2] / "data" / "curated" / "conditions.json"
+    data = json.loads(path.read_text(encoding="utf-8"))["conditions"]
+    return {"conditions": [
+        {"code": c["code"], "system": c["system"], "display": c["display"]}
+        for c in data if c["code"] not in ("Z33.1", "PEN_ALLERGY")
+    ]}
+
+
+@app.get("/drug/{name}")
+def drug_detail(name: str) -> dict:
+    """Full curated profile for one drug (for the docs/drug-browser page)."""
+    p = get_kg().get_drug_profile(name)
+    if p is None:
+        return {"error": "not found"}
+    return {
+        "name": p.name, "rxcui": p.rxcui, "salt": p.salt, "drug_class": p.drug_class,
+        "purpose": p.purpose, "pros": p.pros, "cons": p.cons, "side_effects": p.side_effects,
+        "dose": p.dose, "timing": p.timing, "route": p.route,
+        "pregnancy_category": p.pregnancy_category, "renal_caution": p.renal_caution,
+    }
+
+
 @app.post("/recommend", response_model=RecommendResponse)
 def recommend(req: RecommendRequest) -> RecommendResponse:
     profile = _build_profile(req)
