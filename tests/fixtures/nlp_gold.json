@@ -1,0 +1,72 @@
+{
+  "_meta": {
+    "description": "Gold NLP fixtures. Each case lists the expected condition codes, current-med names, pregnancy/age, and codes that must NOT appear (negated/family). Used to compute entity-extraction precision/recall/F1 and negation/family accuracy."
+  },
+  "cases": [
+    {
+      "text": "32, pregnant, severe cramps and fever, history of low BP and high sugar",
+      "expect_age": 32,
+      "expect_pregnant": true,
+      "expect_conditions": ["55300003", "386661006", "I95", "73211009"],
+      "expect_meds": [],
+      "forbid_conditions": []
+    },
+    {
+      "text": "58 year old man with high blood pressure and type 2 diabetes, currently on metformin and amlodipine",
+      "expect_age": 58,
+      "expect_pregnant": null,
+      "expect_conditions": ["I10", "73211009"],
+      "expect_meds": ["Metformin", "Amlodipine"],
+      "forbid_conditions": []
+    },
+    {
+      "text": "45F with headache, no chest pain, denies fever",
+      "expect_age": 45,
+      "expect_pregnant": null,
+      "expect_conditions": ["25064002"],
+      "expect_meds": [],
+      "forbid_conditions": ["386661006"]
+    },
+    {
+      "text": "My father has a heart condition but I only have a mild cough and cold",
+      "expect_age": null,
+      "expect_pregnant": null,
+      "expect_conditions": ["J06.9"],
+      "expect_meds": [],
+      "forbid_conditions": ["I51.9"]
+    },
+    {
+      "text": "28 year old pregnant woman with a urinary tract infection, allergic to penicillin",
+      "expect_age": 28,
+      "expect_pregnant": true,
+      "expect_conditions": ["N39.0"],
+      "expect_meds": [],
+      "forbid_conditions": [],
+      "expect_allergy_codes": ["PEN_ALLERGY"]
+    },
+    {
+      "text": "Patient is not pregnant, has hypothyroidism, takes levothyroxine daily",
+      "expect_age": null,
+      "expect_pregnant": false,
+      "expect_conditions": ["E03.9"],
+      "expect_meds": ["Levothyroxine"],
+      "forbid_conditions": []
+    },
+    {
+      "text": "70 yo with heart failure and chronic kidney disease, on lisinopril",
+      "expect_age": 70,
+      "expect_pregnant": null,
+      "expect_conditions": ["I50.9", "N18.9"],
+      "expect_meds": ["Lisinopril"],
+      "forbid_conditions": []
+    },
+    {
+      "text": "Family history of diabetes; patient reports acid reflux and takes omeprazole",
+      "expect_age": null,
+      "expect_pregnant": null,
+      "expect_conditions": ["K21.9"],
+      "expect_meds": ["Omeprazole"],
+      "forbid_conditions": ["73211009"]
+    }
+  ]
+}
