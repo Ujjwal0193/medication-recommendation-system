@@ -25,7 +25,7 @@
       "expect_pregnant": null,
       "expect_conditions": ["25064002"],
       "expect_meds": [],
-      "forbid_conditions": ["386661006"]
+      "forbid_conditions": ["22253000", "386661006"]
     },
     {
       "text": "My father has a heart condition but I only have a mild cough and cold",
